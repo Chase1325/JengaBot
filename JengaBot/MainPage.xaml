@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="JengaBot.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:JengaBot"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Width="1600" Height="1000">
+
+    <Grid Background= "LightGray"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Top"
+          Width="1600"
+          Height="1000" Margin="0,6,-320,-286">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer HorizontalAlignment="Left" Height="715" Margin="1025,0,0,141" VerticalAlignment="Bottom" Width="350"
+                      Background="AliceBlue" Grid.RowSpan="2">
+            <GridView x:Name="gridView" Height="704"/>
+        </ScrollViewer>
+        <TextBlock Text = "User Control" TextAlignment="Center" HorizontalAlignment="Left" Margin="1145,84,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="100"/>
+        <TextBlock Text ="JENGABOT 9001" TextAlignment="Center" HorizontalAlignment="Center" Margin="0,50,0,0"  TextWrapping="NoWrap"  VerticalAlignment="Top" FontStyle="Oblique"  FontSize="24" Width="250"/>
+        <Button Name="SolverButton" 
+                Click="SolveClick" 
+                Content="Auto Solve" 
+                HorizontalAlignment="Left" 
+                Margin="365,144,0,0" 
+                VerticalAlignment="Top" 
+                ClickMode="Press" />
+        <Button x:Name="PlayMoveButton" 
+                Click="PlayMoveClick"
+                Content="Check And Play Move" 
+                HorizontalAlignment="Left" 
+                Margin="1120,394,0,0" 
+                Grid.Row="1" VerticalAlignment="Top" BorderBrush="Black"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="1100,115,0,0" VerticalAlignment="Top" Width="200" Height="29" />
+        <ProgressBar x:Name="SolverProgress"  HorizontalAlignment="Left" Height="15" Margin="195,219,0,0" Grid.Row="1" VerticalAlignment="Top" Width="330"/>
+    </Grid>
+</Page>
