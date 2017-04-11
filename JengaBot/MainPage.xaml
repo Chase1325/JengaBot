@@ -13,29 +13,79 @@
           Width="1600"
           Height="1000" Margin="0,6,-320,-286">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
-        <ScrollViewer HorizontalAlignment="Left" Height="715" Margin="1025,0,0,141" VerticalAlignment="Bottom" Width="350"
-                      Background="AliceBlue" Grid.RowSpan="2">
-            <GridView x:Name="gridView" Height="704"/>
+        <ScrollViewer HorizontalAlignment="Left" 
+                      Height="685" Margin="625,0,0,119" 
+                      VerticalAlignment="Bottom" Width="350"
+                      Background="AliceBlue"
+                      BorderBrush="Black"
+                      BorderThickness="1">
+            <GridView x:Name="gridView" Background="AntiqueWhite"
+                      IsItemClickEnabled="True" Height="1080" 
+                      BorderThickness="1" Width="290"
+                      BorderBrush="Black"
+                      Grid.ColumnSpan="3"
+                      VariableSizedWrapGrid.RowSpan="18"
+                      SelectionChanged="gridView_SelectionChanged">
+                <Button BorderBrush="Black" BorderThickness="0,1" Background="Red" ClickMode="Press" Foreground="Black" Height="40" Width="90" Padding="0" HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center"/>
+                <Button BorderBrush="Black" BorderThickness="0,1" Background="#FFFF0303" ClickMode="Press" Height="40" Width="90" Padding="0" UseLayoutRounding="True" HorizontalAlignment="Center"/>
+                <Button BorderThickness="0,1,1,1" Background="Red" ClickMode="Press" Height="40" Width="90" BorderBrush="Black" Padding="0"/>
+                <Button BorderBrush="Black" BorderThickness="1" Background="White" HorizontalAlignment="Center" Height="40" Width="90"/>
+            </GridView>
         </ScrollViewer>
-        <TextBlock Text = "User Control" TextAlignment="Center" HorizontalAlignment="Left" Margin="1145,84,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="100"/>
-        <TextBlock Text ="JENGABOT 9001" TextAlignment="Center" HorizontalAlignment="Center" Margin="0,50,0,0"  TextWrapping="NoWrap"  VerticalAlignment="Top" FontStyle="Oblique"  FontSize="24" Width="250"/>
+        <TextBlock Text = "Left View"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Left" 
+                   Margin="750,171,0,0"
+                   TextWrapping="Wrap"  
+                   VerticalAlignment="Top"
+                   Height="25" Width="100" 
+                   Name="ViewName"
+                   SelectionChanged="TextBlock_SelectionChanged"/>
+        <TextBlock Text ="JENGABOT 9001" TextAlignment="Center" HorizontalAlignment="Center" Margin="675,54,675,0"  TextWrapping="NoWrap"  VerticalAlignment="Top" FontStyle="Oblique"  FontSize="24" Width="250"/>
         <Button Name="SolverButton" 
                 Click="SolveClick" 
                 Content="Auto Solve" 
                 HorizontalAlignment="Left" 
-                Margin="365,144,0,0" 
+                Margin="465,196,0,0" 
                 VerticalAlignment="Top" 
                 ClickMode="Press" />
         <Button x:Name="PlayMoveButton" 
                 Click="PlayMoveClick"
                 Content="Check And Play Move" 
                 HorizontalAlignment="Left" 
-                Margin="1120,394,0,0" 
-                Grid.Row="1" VerticalAlignment="Top" BorderBrush="Black"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="1100,115,0,0" VerticalAlignment="Top" Width="200" Height="29" />
-        <ProgressBar x:Name="SolverProgress"  HorizontalAlignment="Left" Height="15" Margin="195,219,0,0" Grid.Row="1" VerticalAlignment="Top" Width="330"/>
+                Margin="440,312,0,0" VerticalAlignment="Top" BorderBrush="Black"/>
+        <ProgressBar x:Name="SolverProgress"  
+                     HorizontalAlignment="Left" 
+                     Height="15"
+                     Margin="155,555,0,0" 
+                     VerticalAlignment="Top" 
+                     Width="330"
+                     />
+        <TextBlock x:Name="CurrentStatus" HorizontalAlignment="Left" Margin="266,429,0,0" TextWrapping="Wrap" Text="Current Status" VerticalAlignment="Top" SelectionChanged="CurrentStatus_SelectionChanged"/>
+
+        <Border BorderBrush="Black" 
+                BorderThickness="1" 
+                HorizontalAlignment="Left" 
+                Height="37" Margin="105,484,0,0" VerticalAlignment="Top" 
+                Width="475"
+                Background="White">
+            <TextBlock x:Name="StatusUpdate" 
+                       TextAlignment="Center"
+                       HorizontalAlignment="Left" 
+                       Margin="-1.333,8.667,-1,-6" 
+                       TextWrapping="Wrap" 
+                       Text="No Processes Currently Running" 
+                       VerticalAlignment="Top" Height="32"
+                       Width="475"/>
+        </Border>
+        <ToggleSwitch x:Name="ViewSelect" 
+                      Header="View Selection" 
+                      HorizontalAlignment="Left" 
+                      Margin="231,202,0,0" VerticalAlignment="Top" 
+                      Toggled="SwitchView"
+                      OffContent="Right View" 
+                      OnContent="Left View" IsOn="True"/>
     </Grid>
 </Page>
