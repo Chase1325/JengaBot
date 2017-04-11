@@ -27,16 +27,6 @@ namespace JengaBot
             this.InitializeComponent();
             Blocks[] blockArray = new Blocks[54];
 
-            if (ViewSelect.IsOn)
-            {
-
-                ViewName.Text = "Left View";
-                //Show Left View
-            } else if (!ViewSelect.IsOn)
-            {
-                ViewName.Text = "Right View";
-                //Show Right View
-            }
         }
 
         void SolveClick(object sender, RoutedEventArgs e)
@@ -52,49 +42,298 @@ namespace JengaBot
            
         }
 
-        void SwitchView(object sender, RoutedEventArgs e) {
-            if (ViewSelect.IsOn)
-            {
-                StatusUpdate.Text = "Left View Enabled";
-                ViewName.Text = "Left View";
-                //SHOW the left view
-            }
 
-            if (!ViewSelect.IsOn)
-            {
-                StatusUpdate.Text = "Right View Enabled";
-                ViewName.Text = "Right View";
-                //Show the right view
-            }
+
+
+        void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+
         }
-        
+        void textBlock_Copy2_SelectionChanged(object sender, RoutedEventArgs e)
+        {
 
+        }
         void CurrentStatus_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
         }
+        /// <summary>
+        /// Button Handlers
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
-        private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
+        private void B0_Click(object sender, RoutedEventArgs e)
+        {
+           //Store the selection
+        }
+
+        private void B1_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        void leftView()
-        {
-            
-        }
-
-        void rightView()
+        private void B2_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void B3_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void gridView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void B4_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B5_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B6_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B7_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B8_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B9_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B10_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B11_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B12_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B13_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B14_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B15_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B16_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B17_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B18_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B19_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B20_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B21_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B22_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B23_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B24_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B25_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B26_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B27_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B28_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B29_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B30_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B31_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B32_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B33_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B34_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B35_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B36_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B37_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B38_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B39_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B40_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B41_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B42_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B43_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B44_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B45_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B46_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B47_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B48_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B49_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B50_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B51_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B52_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B53_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
         {
 
         }
