@@ -22,11 +22,15 @@ namespace JengaBot
   
     public sealed partial class MainPage : Page
     {
+        double ProgressInt = 0;
         public MainPage()
         {
             this.InitializeComponent();
             Blocks[] blockArray = new Blocks[54];
-
+            SolverProgress.Value = 0;
+            SolverProgress.Maximum = 36;
+            ProgressText.Text = ProgressInt.ToString() + "%";
+            
         }
 
         void SolveClick(object sender, RoutedEventArgs e)
@@ -39,6 +43,18 @@ namespace JengaBot
         {
             //TODO: Execute the move if valid selection
             StatusUpdate.Text = "User Played a Move";
+            SolverProgress.Value += 1;
+            if (ProgressInt <= 97 && ProgressInt >= 96)
+            {
+                ProgressInt = 100;
+            }
+            if (ProgressInt < 100)
+            {
+                ProgressInt += 2.77;
+            }
+           
+
+            ProgressText.Text = ProgressInt.ToString() + "%";
            
         }
 
@@ -334,6 +350,11 @@ namespace JengaBot
         }
 
         private void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
+        {
+
+        }
+
+        private void textBlock_Copy10_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
         }
