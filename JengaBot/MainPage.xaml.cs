@@ -18,6 +18,9 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using JengaBot.Models;
 using System.Windows.Input;
+using System.Net;
+using System.Net.Sockets;
+//using Windows.Networking.Sockets;
 
 
 namespace JengaBot
@@ -43,11 +46,24 @@ namespace JengaBot
         int selection; //block index selected
         bool moveAbility = false;
 
+        String server = "192.168.1.134";
+        Int32 port = 5001;
+
+        TcpClient client = new TcpClient();
+
+        // String server = "190.168.1.134";// FOR TCP
+        //Int32 port = 5001;
+
         public MainPage()
         {
             this.InitializeComponent();
             rows = row.ToList();
+
             
+            client.ConnectAsync(server, port);
+
+
+
             initializeGame();
         }
 
@@ -59,8 +75,9 @@ namespace JengaBot
             
             initializeRows(rows);
             initializeUtility(blocks);
-         //   initializeBtns(btn);
+            //   initializeBtns(btn);
 
+            
             SolverProgress.Value = 0;
             SolverProgress.Maximum = 36;
             ProgressText.Text = ProgressInt.ToString() + "%";
@@ -75,6 +92,57 @@ namespace JengaBot
                 rows.ElementAt(i).right = 1;
                 rows.ElementAt(i).sum = 3;
             }
+        }
+
+        void piConnect(String server, string message)
+        {
+            try
+            {
+               
+               //client.ConnectAsync(server, port);
+                // Translate the passed message into ASCII and store it as a Byte array.
+                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
+
+                // Get a client stream for reading and writing.
+                 //Stream stream = client.GetStream();
+
+               NetworkStream stream = client.GetStream();
+
+                // Send the message to the connected TcpServer. 
+                stream.Write(data, 0, data.Length);
+
+               // Console.WriteLine("Sent: {0}", message);
+
+                // Receive the TcpServer.response.
+
+                // Buffer to store the response bytes.
+                data = new Byte[256];
+
+                // String to store the response ASCII representation.
+                String responseData = String.Empty;
+
+                // Read the first batch of the TcpServer response bytes.
+                Int32 bytes = stream.Read(data, 0, data.Length);
+                responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
+                //   Console.WriteLine("Received: {0}", responseData);
+                StatusUpdate.Text = responseData;
+
+                // Close everything.
+                stream.Flush();
+               // stream.Close();
+                //client.;
+            }
+            catch (ArgumentNullException e)
+            {
+            // StatusUpdate.Text = ("ArgumentNullException: {0}", e);
+            }
+            catch (SocketException e)
+            {
+              //  Console.WriteLine("SocketException: {0}", e);
+            }
+
+          //  Console.WriteLine("\n Press Enter to continue...");
+           // Console.Read();
         }
 
         void initializeUtility(Block[] blocks)
@@ -151,6 +219,10 @@ namespace JengaBot
             //Reset the Utilities
             resetUtilities(blocks);
 
+
+            piConnect(server, "fart");
+
+            //  piSend(server, "John Sucks");
             //Check if game has been won
         }
 
@@ -176,7 +248,7 @@ namespace JengaBot
                     }
                     else if ((rows.ElementAt((int)blocks[i].row - 1).left == 1) && (rows.ElementAt((int)blocks[i].row - 1).middle == 1))
                     {
-                        if (blocks[i].column == 2)
+                        if (blocks[i].column == 1)
                         {
                             blocks[i].Utility = 25;
                         }
